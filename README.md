@@ -45,8 +45,8 @@ Additional considerations:
 
 ## User Events
 <!-- 1) Firstly the user should be able to type into the input bars their question and the 2 options to vote on -->
-2) upon submitting (whether enter or click) the inputs should show up under current poll display 
-    - the input bars where the user types their questions should clear out as well
+<!-- 2) upon submitting (whether enter or click) the inputs should show up under current poll display 
+    - the input bars where the user types their questions should clear out as well -->
 3) upon clicking up or down, the number of votes should increment accordingly 
 4) upon clicking end button, current poll display should clear and data should be transferred over to past polls 
     - past polls and their data should all be displayed in a loop to prevent repeated boxes

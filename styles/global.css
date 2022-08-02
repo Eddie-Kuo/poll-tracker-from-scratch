@@ -39,3 +39,12 @@ footer {
     margin: 10px;
 }
 
+.top-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.right-section {
+    display: block;
+}
