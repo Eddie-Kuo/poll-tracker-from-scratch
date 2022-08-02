@@ -9,6 +9,9 @@ const optionOneDislike = document.getElementById('option-one-dislike');
 const optionTwoLike = document.getElementById('option-two-like');
 const optionTwoDislike = document.getElementById('option-two-dislike');
 
+const scoreOne = document.getElementById('score-one');
+const scoreTwo = document.getElementById('score-two');
+
 
 
 // let state
