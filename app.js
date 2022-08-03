@@ -1,4 +1,5 @@
 // import functions and grab DOM elements
+import { renderPoll } from './render-function.js';
 
 const pollForm = document.getElementById('poll-form');
 const currentQuestion = document.getElementById('live-question');
@@ -11,7 +12,7 @@ const optionTwoDislike = document.getElementById('option-two-dislike');
 
 const publishButtEl = document.getElementById('publish-button');
 
-const pastPolls = document.getElementById('past-polls');
+const pastPollsDisplay = document.getElementById('past-polls');
 
 const scoreOne = document.getElementById('score-one');
 const scoreTwo = document.getElementById('score-two');
@@ -69,9 +70,35 @@ optionTwoDislike.addEventListener('click', () => {
 });
 
 publishButtEl.addEventListener('click', () => {
-    pollReset();
 
+    const endPollStats = {
+        question: question,
+        optionOne: optionOne,
+        optionTwo: optionTwo,
+        optionOneCount: optionOneCount,
+        optionTwoCount: optionTwoCount,
+    };
+    pastPollsArr.push(endPollStats);
+    displayAllPolls();
+
+    pollReset();
 });
+
+function displayAllPolls() {
+    pastPollsDisplay.textContent = '';
+
+    for (let pastPoll of pastPollsArr) {
+        const pastPOllEl = renderPoll(pastPoll);
+        pastPollsDisplay.append(pastPOllEl);
+    }
+    
+}
+
+function displayCurrentPoll() {
+    currentQuestion.textContent = question;
+    currentOptionOne.textContent = optionOne;
+    currentOptionTwo.textContent = optionTwo;
+}
 
 function pollReset() {
     currentQuestion.textContent = '';
@@ -79,39 +106,9 @@ function pollReset() {
     currentOptionTwo.textContent = '';
     scoreOne.textContent = 0;
     scoreTwo.textContent = 0;
+    question = '';
+    optionOne = '';
+    optionTwo = '';
+    optionOneCount = 0;
+    optionTwoCount = 0;
 }
-
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
-
-function displayCurrentPoll() {
-    currentQuestion.textContent = question;
-    currentOptionOne.textContent = optionOne;
-    currentOptionTwo.textContent = optionTwo;
-}
-    
-
-
-function displayAllPolls() { // figure out how to use these functions after fixing the issue above first
-
-}
-
-
-function renderPolls(question, optionOne, optionTwo, optionOneCount, optionTwoCount) {
-    const questionDiv = document.createElement('div');
-    const optionOneDiv = document.createElement('p');
-    const optionTwoDiv = document.createElement('p');
-    const optionOneCountDiv = document.createElement('p');
-    const optionTwoCountDiv = document.createElement('p');
-
-    questionDiv.textContent = question;
-    optionOneDiv.textContent = optionOne;
-    optionTwoDiv.textContent = optionTwo;
-    optionOneCountDiv.textContent = optionOneCount;
-    optionTwoCountDiv.textContent = optionTwoCount;
-
-    questionDiv.append(optionOneDiv, optionOneCountDiv, optionTwoDiv, optionTwoCountDiv);
-    pastPolls.append(questionDiv);
-}
-
