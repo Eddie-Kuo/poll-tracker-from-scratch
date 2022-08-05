@@ -22,7 +22,56 @@
     </header>
 
     <main>
+        <div class="top-section">
+            <section class="left-section">
+                <form id="poll-form">
+                    <h2>New Form</h2>
+                    <label>Question:
+                        <input class="input" name="question">
+                    </label>
+                    <label>Option 1:
+                        <input class="input" name="input-one">
+                    </label>
+                    <label>Option 2:
+                        <input class="input" name="input-two">
+                    </label>
+                    <button class="input">Start Poll!</button>
+                </form>
+            </section>
 
+            <section class="right-section">
+                    <h2>Current Poll</h2>
+                        <p>Current Question:
+                            <div id="live-question">
+                            
+                            </div>
+                        </p>
+                            <div id="live-option-one">
+
+                            </div>
+                        <p id="score-one">0</p>
+                        <button id="option-one-like">Like</button>
+                        <button id="option-one-dislike">Dislike</button>
+
+                            <div id="live-option-two">
+                        
+                            </div>
+                        <p id="score-two">0</p>
+                        <button id="option-two-like">Like</button>
+                        <button id="option-two-dislike">Dislike</button>
+                        
+                        <div>
+                            <button id="publish-button">Publish</button>
+                        </div>
+            </section>
+        </div>
+        <div>
+            <section class="bottom-section">
+                <div id="past-polls">
+                    
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>&copy;2022 Software Developer</footer>

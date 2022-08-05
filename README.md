@@ -24,3 +24,29 @@ Additional considerations:
   - What needs to live in a persistence layer?
 - Is there some state we need to initialize?
 - Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+
+## HTML Elements: 
+- form for the input of questions and option 1 + option 2
+  **Why? so the user can interact with the poll and input the question/ options they want to see**
+- submit button/ enter selection at the end of the form
+  **why? so the user can enter the form and start the poll voting**
+- div in a separate section to display the current poll 
+  **why? this is where the live poll will be held and where votes can be casted**
+- 4 buttons to up vote or down vote each option 
+  **this is for the user to be able to vote on which selection they want to win**
+- 1 button at the bottom to end the poll 
+  **to end the poll so the user can start a new one with the data of the current being stored**
+- bottom section and divs to display the past polls once the submit button is hit
+  **section for the user to be able to see all the previous polls that were created and their stats**
+
+## State
+- the questions and the options that are inputted for the poll 
+- the number of up votes and down votes for each option 
+
+## User Events
+<!-- 1) Firstly the user should be able to type into the input bars their question and the 2 options to vote on -->
+<!-- 2) upon submitting (whether enter or click) the inputs should show up under current poll display 
+    - the input bars where the user types their questions should clear out as well -->
+<!-- 3) upon clicking up or down, the number of votes should increment accordingly  -->
+4) upon clicking end button, current poll display should clear and data should be transferred over to past polls 
+    - past polls and their data should all be displayed in a loop to prevent repeated boxes
